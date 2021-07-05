@@ -1,10 +1,14 @@
 {
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "flake:sys";
     flake-utils.url = "github:numtide/flake-utils";
+    alot-sources = {
+      url = "path:/home/luc/src/alot";
+      flake = false;
+    };
   };
 
-  outputs = { self, nixpkgs, flake-utils, ... }:
+  outputs = { self, nixpkgs, flake-utils, ... }@inputs:
   let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.x86_64-linux;
@@ -17,7 +21,7 @@
       rec {
         alot = pkgs.alot.overridePythonAttrs (oa: {
           version = "dev";
-          src = ./.;
+          src = inputs.alot-sources;
           propagatedBuildInputs = oa.propagatedBuildInputs ++ (
             with pkgs.python3Packages; [notmuch2 cffi]
             );
