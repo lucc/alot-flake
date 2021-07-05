@@ -1,32 +1,5 @@
 {
   "nodes": {
-    "alot-sources": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-GcOXr5RNIotGSsW9TV7TeLc5KANqqmDIYy524YtjfpM=",
-        "path": "/home/luc/src/alot",
-        "type": "path"
-      },
-      "original": {
-        "path": "/home/luc/src/alot",
-        "type": "path"
-      }
-    },
-    "flake-utils": {
-      "locked": {
-        "lastModified": 1623875721,
-        "narHash": "sha256-A8BU7bjS5GirpAUv4QA+QnJ4CceLHkcXdRp4xITDB0s=",
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "rev": "f7e004a55b120c02ecb6219596820fcd32ca8772",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "type": "github"
-      }
-    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1624447853,
@@ -42,8 +15,6 @@
     },
     "root": {
       "inputs": {
-        "alot-sources": "alot-sources",
-        "flake-utils": "flake-utils",
         "nixpkgs": "nixpkgs"
       }
     }
