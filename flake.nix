@@ -15,7 +15,7 @@
           urwidtrees
           twisted
           #python-magic
-          magic
+          python_magic
           configobj
           gpgme
         ]))
