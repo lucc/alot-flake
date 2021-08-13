@@ -25,6 +25,7 @@
         dbus
       ];
       PYTHONPATH = "/home/luc/src/alot";
+      NOTMUCH_CONFIG = "/home/luc/.config/notmuch/default/config";
     };
   };
 }
