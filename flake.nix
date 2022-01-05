@@ -30,6 +30,7 @@
   in
   {
     defaultApp = utils.lib.mkApp { drv = pkgs.alot; };
+    defaultPackage = pkgs.alot;
     packages.alot = pkgs.alot;
 
     devShell = pkgs.mkShell {
