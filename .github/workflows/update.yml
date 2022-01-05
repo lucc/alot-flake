@@ -1,6 +1,5 @@
 name: Update the flake inputs
 on:
-  push:
   schedule:
   - cron: '0 0 * * *'
 jobs:
@@ -15,7 +14,7 @@ jobs:
         git config user.name github-actions
         git config user.email github-actions@github.com
     - name: update inputs in the lock file
-      run: nix flake lock --commit-lock-file --update-input alot --update-input nixpkgs
+      run: nix flake lock --commit-lock-file --update-input alot
     - name: build the alot package
       run: "nix build .#alot"
     - name: push changes back to the repository
