@@ -3,11 +3,11 @@
     "alot": {
       "flake": false,
       "locked": {
-        "lastModified": 1636714200,
-        "narHash": "sha256-vdvZxPyio+vW2gBN2cnH1NeDSBLHMZfNPjQkhC77zXI=",
+        "lastModified": 1641475878,
+        "narHash": "sha256-95pP2YwTpK1m7m65bVgQyVq9vO8XMeMwi3rMzw6R6tY=",
         "owner": "pazz",
         "repo": "alot",
-        "rev": "a3b601813a5063e75ede60be6f069c79fbb4f09a",
+        "rev": "52f11f089df19cf336ad0983368e880dc5364149",
         "type": "github"
       },
       "original": {
