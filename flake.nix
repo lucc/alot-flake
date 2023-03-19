@@ -9,15 +9,16 @@
   outputs = { self, nixpkgs, utils, ... }@inputs:
   {
     overlay = final: prev: {
-      alot = prev.alot.overrideAttrs (old: rec {
-        pname = "alot";
-        name = "alot-${version}";
-        version = "dev-${inputs.alot.shortRev}";
-        src = inputs.alot;
-        preBuild = ''
-          sed -i /__version__/s/\'\$/-dev-${inputs.alot.shortRev}\'/ alot/__init__.py
-        '';
-      });
+      alot = prev.alot.overridePythonAttrs (old:
+        let version = "${old.version}post-dev+${inputs.alot.shortRev}"; in
+        {
+          name = "alot-${version}";
+          inherit version;
+          src = inputs.alot;
+          preBuild = ''
+            sed -i '/__version__/s/=.*/= "${version}"/' alot/__init__.py
+          '';
+        });
     };
   }
   //
