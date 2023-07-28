@@ -18,6 +18,8 @@
           preBuild = ''
             sed -i '/__version__/s/=.*/= "${version}"/' alot/__init__.py
           '';
+          nativeCheckInputs = old.nativeCheckInputs ++ [ final.notmuch ];
+          disabledTests = old.disabledTests ++ ["test_parsing_notmuch_config_with_non_bool_synchronize_flag_fails"];
         });
     };
   }
